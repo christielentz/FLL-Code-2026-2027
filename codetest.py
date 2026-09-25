@@ -11,3 +11,9 @@ color_sensor = ColorSensor(Port.C)
 left_wheel = Motor(Port.E, Direction.COUNTERCLOCKWISE)
 right_wheel = Motor(Port.F, Direction.CLOCKWISE)
 drive_base = DriveBase(left_wheel, right_wheel, 88.9, 112)
+
+await multitask(
+        left_attachment_.run_until_stalled(-500, Stop.HOLD, 50),
+        right_attachment.run_until_stalled(-500, Stop.HOLD, 50),
+        race=True,
+    )
